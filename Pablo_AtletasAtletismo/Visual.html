@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<label for="inputNome">Nome: </label>
+<input type="text" name="inputNome" id="inputNome">
+<br>
+<label for="inputData">Data: </label>
+<input type="date" name="inputData" id="inputData">
+<br>
+<label for="inputModalidade">Modalidade: </label>
+<select name="inputModalidade" id="inputModalidade">
+    <optgroup label="Corrida de Velocidade">
+        <option value="100m">100 Metros</option>
+        <option value="200m">200 Metros</option>
+        <option value="400m">400 Metros</option>
+    </optgroup>
+    <optgroup label="Corrida de Resistencia">
+        <option value="100m">800 Metros</option>
+        <option value="1500m">1500 Metros</option>
+        <option value="3000m">3000 Metros</option>
+    </optgroup>
+    <optgroup label="Lançamento">
+        <option value="peso">Peso</option>
+        <option value="dardo">Dardo</option>
+        <option value="martelo">Martelo</option>
+    </optgroup>
+    <optgroup label="Salto">
+        <option value="altura">Altura</option>
+        <option value="distancia">Distancia</option>
+    </optgroup>
+</select>
+<br>
+<label for="inputGenero">Genero: </label>
+<select name="inputGenero" id="inputGenero">
+    <option value="fem">Feminino</option>
+    <option value="male">Masculino</option>
+</select>
+<br>
+<label for="inputCompeticoes">Competiçoes que Participou: </label>
+<input type="number" name="inputCompeticoes" id="inputCompeticoes">
+<br>
+<label for="inputMedalha">Medalhas Ganhas: </label>
+<input type="number" name="inputMedalha" id="inputMedalha">
+<br>
+<div id="resp">...</div>
+<script src="./Controle.js"></script>
+<script src="./Classe.js"></script>
+</body>
+
+</html>
