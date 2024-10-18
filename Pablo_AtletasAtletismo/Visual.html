@@ -2,57 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
 </head>
 
 <body>
   <h1>Cadastro de Atletas</h1>
   <p>Bem-vindo ao sistema de cadastro de atletas. Aqui você pode:
-        <br> - Inserir informações sobre atletas
-        <br> - Procurar dados pelo ID
-        <br> - Alterar informações existentes
-        <br> - Excluir registros
-        <br>
-        <br> As informações incluem ID, nome, data de nascimento, modalidade, gênero, competições e medalhas ganhas.
+    <br> - Inserir informações sobre atletas
+    <br> - Procurar dados pelo ID
+    <br> - Alterar informações existentes
+    <br> - Excluir registros
+    <br>
+    <br> As informações incluem ID, nome, data de nascimento, modalidade, gênero, competições e medalhas ganhas.
   <p>
-<label for="inputId">ID: </label>
-<input type="text" name="inputId" id="inputId">
-<input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
-<input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
-<input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
-<input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
-<br>
-<label for="inputNome">Nome: </label>
-<input type="text" name="inputNome" id="inputNome">
-<br>
-<label for="inputData">Data: </label>
-<input type="date" name="inputData" id="inputData">
-<br>
-<label for="inputModalidade">Modalidade: </label>
-<select name="inputModalidade" id="inputModalidade">
-        <option value="inputCV">Corrida de Velocidade</option>
-        <option value="inputCR">Corrida de Resistencia</option>
-        <option value="inputL">Lançamento</option>
-        <option value="inputL">Salto</option>
-</select>
-<br>
-<label for="inputGenero">Genero: </label>
-<select name="inputGenero" id="inputGenero">
-    <option value="fem">Feminino</option>
-    <option value="male">Masculino</option>
-</select>
-<br>
-<label for="inputCompeticoes">Competiçoes que Participou: </label>
-<input type="number" name="inputCompeticoes" id="inputCompeticoes">
-<br>
-<label for="inputMedalha">Medalhas Ganhas: </label>
-<input type="number" name="inputMedalha" id="inputMedalha">
-<br>
-<div id="resp">...</div>
-<script src="./Controle.js"></script>
-<script src="./Classe.js"></script>
+    <label for="inputId">ID: </label>
+    <input type="text" name="inputId" id="inputId">
+    <input type="button" value="Procure" id="btProcure" onclick="procure()" style="display:inline;">
+    <input type="button" value="Inserir" id="btInserir" onclick="inserir()" style="display:none;">
+    <input type="button" value="Alterar" id="btAlterar" onclick="alterar()" style="display:none;">
+    <input type="button" value="Excluir" id="btExcluir" onclick="excluir()" style="display:none;">
+    <br>
+    <label for="inputNome">Nome: </label>
+    <input type="text" name="inputNome" id="inputNome">
+    <br>
+    <label for="inputData">Data: </label>
+    <input type="date" name="inputData" id="inputData">
+    <br>
+    <label for="inputModalidade">Modalidade: </label>
+    <select name="inputModalidade" id="inputModalidade">
+      <option value="inputCV">Corrida de Velocidade</option>
+      <option value="inputCR">Corrida de Resistencia</option>
+      <option value="inputLA">Lançamento ou Arremesso</option>
+      <option value="inputS">Salto</option>
+    </select>
+    <br>
+    <label for="inputGenero">Genero: </label>
+    <select name="inputGenero" id="inputGenero">
+      <option value="fem">Feminino</option>
+      <option value="male">Masculino</option>
+    </select>
+    <br>
+    <label for="inputCompeticoes">Competiçoes que Participou: </label>
+    <input type="number" name="inputCompeticoes" id="inputCompeticoes">
+    <br>
+    <label for="inputMedalha">Medalhas Ganhas: </label>
+    <input type="number" name="inputMedalha" id="inputMedalha">
+    <br>
+  <div id="divAviso">...</div>
+  <br>
+  <input type="button" value="Salvar" id="btSalvar" onclick="salvarAlt()" style="display:none;">
+  <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarAlt()" style="display:none;">
+  <br>
+  <br>
+  <div id="divResp">...</div>
+  <script src="./Controle.js"></script>
+  <script src="./Classe.js"></script>
 </body>
 
 </html>
