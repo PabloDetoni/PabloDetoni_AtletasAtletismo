@@ -31,18 +31,10 @@
     <input type="date" name="inputData" id="inputData">
     <br>
     <label for="inputModalidade">Modalidade: </label>
-    <select name="inputModalidade" id="inputModalidade">
-      <option value="inputCV">Corrida de Velocidade</option>
-      <option value="inputCR">Corrida de Resistencia</option>
-      <option value="inputLA">Lançamento ou Arremesso</option>
-      <option value="inputS">Salto</option>
-    </select>
+    <input type="text" name="inputModalidade" id="inputModalidade">
     <br>
     <label for="inputGenero">Genero: </label>
-    <select name="inputGenero" id="inputGenero">
-      <option value="fem">Feminino</option>
-      <option value="male">Masculino</option>
-    </select>
+    <input type="text" name="inputGenero" id="inputGenero">
     <br>
     <label for="inputCompeticoes">Competiçoes que Participou: </label>
     <input type="number" name="inputCompeticoes" id="inputCompeticoes">
@@ -52,8 +44,8 @@
     <br>
   <div id="divAviso">...</div>
   <br>
-  <input type="button" value="Salvar" id="btSalvar" onclick="salvarAlt()" style="display:none;">
-  <input type="button" value="Cancelar" id="btCancelar" onclick="cancelarAlt()" style="display:none;">
+  <input type="button" value="Salvar" id="btSalvar" onclick="salvar()" style="display:none;">
+  <input type="button" value="Cancelar" id="btCancelar" onclick="cancelar()" style="display:none;">
   <br>
   <br>
   <div id="divResp">...</div>
