@@ -66,21 +66,21 @@ function excluir() {
 function salvar() {
     const id = document.getElementById("inputId").value;
     let nome = document.getElementById("inputNome").value;
+    let genero = document.getElementById("inputGenero").value;
     let data = document.getElementById("inputData").value;
     let modalidade = document.getElementById("inputModalidade").value;
-    let genero = document.getElementById("inputGenero").value;
     let competicoes = parseInt(document.getElementById("inputCompeticoes").value);
     let medalhas = parseInt(document.getElementById("inputMedalha").value);
 
     if (id && nome && data && !isNaN(medalhas) && modalidade && genero && !isNaN(competicoes)) {
         switch (oQueEstaFazendo) {
             case 'inserindo':
-                atleta = new Atleta(id, nome, data, medalhas, modalidade, genero, competicoes);
+                atleta = new Atleta(id, nome, genero, data, modalidade, medalhas, competicoes);
                 listaDeAtletas.push(atleta);
                 mostrarAviso("Inserido na lista");
                 break;
             case 'alterando':
-                atletaAlterado = new Atleta(id, nome, data, medalhas, modalidade, genero, competicoes);
+                atletaAlterado = new Atleta(id, nome, genero, data, modalidade, medalhas, competicoes);
                 listaDeAtletas[atleta.posicaoNaLista] = atletaAlterado;
                 mostrarAviso("Alterado");
                 break;
@@ -112,11 +112,11 @@ function preparaListagem(vetor) {
         texto +=
             linha.id + " - " +
             linha.nome + " - " +
-            linha.data + " - " +
-            linha.medalhas + " - " +
-            linha.modalidade + " - " +
             linha.genero + " - " +
-            linha.competicoes + "<br>";
+            linha.data + " - " +
+            linha.modalidade + " - " +
+            linha.competicoes + " - " +
+            linha.medalhas + "<br>";
     }
     return texto;
 }
@@ -187,13 +187,21 @@ function visibilidadeDosBotoes(btProcure, btInserir, btAlterar, btExcluir, btSal
 // Função para inserir dados iniciais
 function inserirDadosIniciais() {
     listaDeAtletas = []; // limpa a lista
-    listaDeAtletas.push(new Atleta('111', 'Ana Silva', "1111-11-01", 6, "Corrida de Velocidade", "Feminino", 10));
-    listaDeAtletas.push(new Atleta('222', 'Bruno Costa', "1111-11-01", 3, "Corrida de Resistencia", "Masculino", 7));
-    listaDeAtletas.push(new Atleta('333', 'Carla Oliveira', "1111-11-01", 1, "Corrida de Velocidade", "Feminino", 4));
-    listaDeAtletas.push(new Atleta('444', 'Daniel Souza', "1111-11-01", 0, "Corrida de Resistencia", "Masculino", 3));
-    listaDeAtletas.push(new Atleta('555', 'Eduardo Lima', "1111-11-01", 2, "Lançamento ou Arremesso", "Masculino", 6));
-    listaDeAtletas.push(new Atleta('666', 'Bruno Costa', "1111-11-01", 7, "Lançamento ou Arremesso", "Masculino", 8));
-    listaDeAtletas.push(new Atleta('777', 'João Lucas', "1111-11-01", 14, "Salto", "Masculino", 16));
+
+    let atleta = new Atleta('111', 'Ana Silva', "Feminino", "1111-01-01", "Corrida de Velocidade", 10, 6);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('222', 'Bruno Costa', "Masculino", "1111-01-01", "Corrida de Resistencia", 7, 3);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('333', 'Carla Oliveira', "Feminino", "1111-01-01", "Corrida de Velocidade", 4, 1);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('444', 'Daniel Souza', "Masculino", "1111-01-01", "Corrida de Resistencia", 3, 0);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('555', 'Eduardo Lima', "Masculino", "1111-01-01", "Lançamento ou Arremesso", 6, 2);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('666', 'Bruno Costa', "Masculino", "1111-01-01", "Lançamento ou Arremesso", 8, 7);
+    listaDeAtletas.push(atleta);
+    atleta = new Atleta('777', 'João Lucas', "Masculino", "1111-01-01", "Salto", 16, 14);
+    listaDeAtletas.push(atleta);
     listar();
     visibilidadeDosBotoes('inline', 'none', 'none', 'none', 'none');
     bloquearAtributos(true);
